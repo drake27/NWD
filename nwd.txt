@@ -1,0 +1,70 @@
+public class NWD {
+
+	public static void nWD(int a, int b) {
+		int x = Math.abs(a);
+		int y = Math.abs(b);
+		if (a == 0 && b == 0) {
+			System.out.println(
+					"Nie istnieje najwiêkszy wspólny podzielnik " + "dla liczb, których wartoœci wynosz¹ " + "zero.");
+
+		}
+		if (a == 0 ^ b == 0) {
+			if (a == 0) {
+				System.out.println("Najwiêkszy wspólny dzielnik " + "liczb " + a + " i " + b + " równa siê " + y + ".");
+			} else {
+				System.out.println("Najwiêkszy wspólny dzielnik " + "liczb " + a + " i " + b + " równa siê " + x + ".");
+			}
+		}
+
+		if (a != 0 && b != 0) {
+			if (x >= y) {
+				while (true) {
+					int r;
+					r = x % y;
+					x = y;
+					y = r;
+					if (y == 0) {
+						System.out.println(
+								"Najwiêkszy wspólny dzielnik " + "liczb " + a + " i " + b + " równa siê " + x + ".");
+						return;
+					}
+
+				}
+			}
+
+			if (y > x) {
+				while (true) {
+					int r;
+					r = y % x;
+					y = x;
+					x = r;
+					if (x == 0) {
+						System.out
+								.println("Najwiêkszy wspólny dzielnik " + "liczb " + a + " i " + b + " równa siê " + y);
+						return;
+					}
+
+				}
+			}
+
+		}
+
+	}
+
+	public static void main(String[] args) {
+		NWD.nWD(0, 0);
+		NWD.nWD(0, 100);
+		NWD.nWD(25, 0);
+		NWD.nWD(25, -100);
+		NWD.nWD(-144, 36);
+		NWD.nWD(-25, -25);
+		int c = 25;
+		int d = 15;
+		int e = (c & d);
+
+		System.out.println(e);
+		boolean a = true & false;
+		System.out.println(a);
+	}
+
+}
